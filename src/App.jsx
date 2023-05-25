@@ -111,53 +111,64 @@ export default () => {
             <div className="center">
                 <h1>Aplikasi Penilaian Mahasiswa</h1>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Aspek penilaian 1</th>
-                        <th>Aspek penilaian 2</th>
-                        <th>Aspek penilaian 3</th>
-                        <th>Aspek penilaian 4</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {penilaian.map((item, index) => (
-                        <tr key={index}>
-                            <td>{item.nama}</td>
-                            <td>
-                                {opsi_nilai(
-                                    index,
-                                    "aspek_penilaian_1",
-                                    item.aspek_penilaian_1
-                                )}
-                            </td>
-                            <td>
-                                {opsi_nilai(
-                                    index,
-                                    "aspek_penilaian_2",
-                                    item.aspek_penilaian_2
-                                )}
-                            </td>
-                            <td>
-                                {opsi_nilai(
-                                    index,
-                                    "aspek_penilaian_3",
-                                    item.aspek_penilaian_3
-                                )}
-                            </td>
-                            <td>
-                                {opsi_nilai(
-                                    index,
-                                    "aspek_penilaian_4",
-                                    item.aspek_penilaian_4
-                                )}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-            <button onClick={simpan}>Simpan</button>
+            <div className="container">
+                <div className="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colSpan="2"></th>
+                                <th>Aspek penilaian 1</th>
+                                <th>Aspek penilaian 2</th>
+                                <th>Aspek penilaian 3</th>
+                                <th>Aspek penilaian 4</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {penilaian.map((item, index) => (
+                                <tr key={index}>
+                                    <td className="no-gap">
+                                        <img
+                                            src="./user.svg"
+                                            alt=""
+                                            width="20"
+                                        />
+                                    </td>
+                                    <td>{item.nama}</td>
+                                    <td>
+                                        {opsi_nilai(
+                                            index,
+                                            "aspek_penilaian_1",
+                                            item.aspek_penilaian_1
+                                        )}
+                                    </td>
+                                    <td>
+                                        {opsi_nilai(
+                                            index,
+                                            "aspek_penilaian_2",
+                                            item.aspek_penilaian_2
+                                        )}
+                                    </td>
+                                    <td>
+                                        {opsi_nilai(
+                                            index,
+                                            "aspek_penilaian_3",
+                                            item.aspek_penilaian_3
+                                        )}
+                                    </td>
+                                    <td>
+                                        {opsi_nilai(
+                                            index,
+                                            "aspek_penilaian_4",
+                                            item.aspek_penilaian_4
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <button onClick={simpan}>Simpan</button>
+            </div>
         </>
     );
 };
