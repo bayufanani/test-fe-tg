@@ -104,6 +104,7 @@ export default () => {
 
         // output test frontend
         console.log(output);
+        alert("check console");
     }
 
     return (
